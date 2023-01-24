@@ -1,0 +1,70 @@
+@import "./../../index.css";
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+.errorLogin{
+  color: white
+  }
+
+.schedule {
+  color: #ffffffcc;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.scheduleCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.content {
+  border: solid 2x;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.info {
+  display: flex;
+  width: 50%;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.schedule {
+  color: #ffffffcc;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.scheduleCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.content {
+  border: solid 2x;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.info {
+  display: flex;
+  width: 50%;
+}

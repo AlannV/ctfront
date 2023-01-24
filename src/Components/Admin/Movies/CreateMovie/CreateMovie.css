@@ -1,0 +1,49 @@
+.create-movie-main-container{
+  margin-top: 6rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  font-family: "Oswald", "Roboto";
+  font-size: 1.5rem;
+  color: white;
+  
+  background-color: transparent;
+}
+
+.create-movie-sub-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.create-movie{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  min-width: 70vw;
+}
+
+.create-movie-buttons-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  margin: 1rem;
+}
+
+.create-movie-radio-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+
+

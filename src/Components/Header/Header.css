@@ -1,0 +1,90 @@
+@import url(../../index.css);
+.header--sticky--container{
+  position: sticky;
+  width: 100%;
+  height: 1em;
+  top: 0;
+  z-index: 10;
+}
+/* Cambio la clase dependiendo de si existe el estado movieDetail, porque sino el header pisa la sección de la peli con su info */
+/* MODIFICADOR */
+.header--sticky--container__marginbottom{
+  margin-bottom: 6em;
+}
+
+.header--container{
+  background: linear-gradient(0deg,rgba(255,252,252,0) 0%, var(--black) 80%);
+  position: absolute;
+  top: 0;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 100%;
+  max-width: max-content;
+  width: 100px;
+}
+
+.header--logo--menu{
+  transition: all 0.2s ease-in-out;
+}
+.header--logo--menu:hover{
+  transform: scale(1.2,1.2);
+}
+
+.header--user--menu{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  color: var(--white);
+  font-family: 'Oswald', 'Roboto';
+}
+
+.header--user{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-right: 1.5em;
+}
+.user--buttons{
+  font-family: 'Oswald', 'Roboto';
+  color: var(--white);
+  background-color: var(--black);
+  padding: 0.5em;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 2px solid var(--white);
+  transition: all .3s;
+  width: 100%;
+}.user--buttons:hover{
+  filter: brightness(150%);
+  border: 2px solid transparent;
+  color: var(--black);
+  background-color: var(--white);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.header--menu--icon{
+  color: var(--white);
+  transform: scale(1, 1);
+  transition: all .5s;
+  margin-left: 1em;
+}
+.header--user--icon{
+  transform: scale(1, 1);
+  transition: all .5s;
+  margin-right: 1.5em;
+}
+.header--menu--icon:hover, .header--user--icon:hover{
+  transform: scale(1.1, 1.1);
+  filter: brightness(150%);
+  cursor: pointer;
+  transition: .5s;
+}
+.header-menu-dropdown {
+  opacity: 1;
+  justify-content: flex-start;
+  transition: all 0.2s ease-in-out;
+  background-color: transparent;
+}

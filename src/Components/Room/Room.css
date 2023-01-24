@@ -1,0 +1,181 @@
+@import './../../index.css';
+
+.room--container{
+    display: flex;
+    width: 80vw;
+    margin: 12em auto;
+    gap: 2em;
+}
+.room--options--container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 20%;
+}
+.room--poster{
+    width: 100%;
+    object-fit: contain;
+}
+
+.room-seats--container{
+    width: 60%;
+    background-color: var(--grey);
+    padding: 1em;
+}
+
+.screen--container{
+    padding: .5em;
+    border-radius: 5px;
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Oswald';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.screen--info--container{
+    list-style-type: none;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+.screen--info--item{
+    color: var(--black);
+    padding: .5em;
+    background-color: var(--violet-white);
+}
+
+.seats--container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 580px;
+    gap: 5px;
+    margin: 1em auto;
+}
+.seat{
+    width: 22px;
+    height: 22px;
+    color: transparent;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-radius: 0px 0px 7px 7px;
+    background-color: var(--white);
+    transition: .3s;
+    font-family: 'Oswald';
+    font-size: .75em;
+}.seat:hover{
+    color: var(--black);
+    cursor: pointer;
+    background-color: var(--yellow);
+    transition: .3s;
+}
+.select {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+.sold {
+    width: 22px;
+    height: 22px;
+    color: transparent;
+    user-select: none;
+    border-radius: 0px 0px 7px 7px;
+    background-color: var(--red);
+}
+.selec:hover{
+    cursor: pointer;
+    outline: solid 1px whitesmoke;
+    color: rgba(250, 235, 215, 0.774);
+}
+.corridor {
+    margin-right: 22px;
+}
+
+.instructions--seats--container{
+    display: flex;
+    color: var(--white);
+    font-family: 'Oswald';
+    justify-content: space-around;
+}
+.normal--seat--container, .your--seat--container, .your--seat--container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    margin: 2em 0 1em 0;
+}
+.normal--seat, .your--seat, .noavailable--seat{
+    height: 22px;
+    width: 22px;
+    border-radius: 0px 0px 7px 7px;
+}
+.normal--seat{
+    background: var(--white);
+}
+.your--seat{
+    background: var(--yellow);
+}
+.noavailable--seat{
+    background: var(--red);
+}
+
+.room--buttons--container{
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+}
+.room--button{
+    border-radius: 5px;
+    border: 2px solid transparent;
+    padding: .5em;
+    background-color: var(--grey);
+    font-family: 'Oswald';
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-around;
+}.room--button:hover{
+    cursor: pointer;
+    opacity: 1;
+    border: 2px solid var(--white);
+    transition: .3s;
+}
+.movie--cart--button{
+    border-radius: 5px;
+    color: var(--white);
+    font-weight: bold;
+    font-family: 'Oswald';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+@media screen and (max-width: 450px) {
+.room--container{
+    flex-direction: column;
+    width: 95%;
+}
+.room--options--container{
+    width: 100%;
+}
+.room--buttons--container{
+    display: flex;
+    width: 100%;
+}
+.seats--container{
+    width: 580px;
+}
+.room-seats--container{
+ width: 580px;   
+}
+.screen--info--container{
+    flex-wrap: wrap;
+}
+.room--poster{
+    display: none;
+}
+}

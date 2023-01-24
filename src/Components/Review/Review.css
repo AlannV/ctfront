@@ -1,0 +1,136 @@
+.review--container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 2px solid var(--white);
+    border-radius: 5px 5px 0 0;
+    padding: 1em;
+    margin: 1em 0 0 0;
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Oswald';
+    gap: 2em;
+}
+
+.see--reviews--button{
+    display: flex;
+    font-family: 'Oswald';
+    align-items: center;
+    font-size: 1.5em;
+    width: auto;
+    transition: .3s;
+}.see--reviews--button:hover{
+    color: var(--violet-white);
+    transition: .3s;
+}
+
+.first--review--container{
+    margin-top: 1em;
+    background-color: var(--black);
+    border-left: 2px solid var(--yellow);
+    padding: 0.5em;
+    display: flex;
+    align-items: flex-start;
+    gap: 2em;
+}
+.first--review--user{
+    background-color: var(--yellow);
+    color: var(--black);
+    padding: .5em;
+    width: 20%;
+    text-align: center;
+    font-weight: bold;
+}
+.first--review--rate{
+    display: flex;
+    flex-direction: column;
+}
+.first--review--stars--container{
+    display: flex;
+    color: var(--yellow);
+}
+
+.create--review--container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.review--notfound{
+    font-family: 'Oswald';
+    color: var(--violet-white);
+    padding: .5em;
+    background-color: var(--black);
+}
+
+.create--review--button{
+    font-family: 'Oswald';
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: .5em;
+    width: 20%;
+    transition: .3s;
+}.create--review--button:hover{
+    border: 2px solid var(--white);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.create--review--form{
+    display: flex;
+    gap: .5em;
+    flex-wrap: wrap;
+}
+.create--review--input{
+    resize: none;
+    color: var(--white);
+    font-family: 'Oswald';
+    padding: .5em;
+    background-color: var(--black);
+    border-radius: 5px;
+    border: none;
+}
+.create--review--rating{
+    width:10%;
+    text-align: center;
+    border-right: 1em solid var(--black);
+}
+.create--review--textarea{
+    width: 65%;
+}
+.create--review--submit{
+    width: 20%;
+    font-size: 1em;
+    background-color: var(--yellow);
+    color: var(--black);
+    transition: .3s;
+}.create--review--submit:hover{
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--black);
+    transition: .3s;
+}
+
+/* TABLET */
+@media screen and (max-width: 920px) {
+    .create--review--form{
+        flex-direction: column;
+    }
+    .create--review--rating, .create--review--input{
+        width: auto;
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 540px) {
+    .movie--detail--info--container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .movie--detail--info{
+        width: auto;
+    }
+}

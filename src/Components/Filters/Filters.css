@@ -1,0 +1,28 @@
+.filters--container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+    width: 60vw;
+    margin: 2em 0 1em 0;
+}
+
+@media screen and (max-width: 1280px){
+    .filters--container, .show--filters--container{
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .show--filters--container{
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .searchbar--input{
+        font-size: 1em;
+    }
+    .filters--select{
+        font-size: 1em;
+    }
+}

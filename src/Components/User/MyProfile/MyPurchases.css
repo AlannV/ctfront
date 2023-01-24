@@ -1,0 +1,117 @@
+.purchases--container{
+    background-color: var(--black);
+    color: var(--white);
+    width: 80vw;
+    margin: 10em auto;
+    font-family: 'Oswald';
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    border-radius: 5px;
+}
+.purchase--title{
+    border-bottom: 2px solid var(--white);
+    margin: 1em 0 1em 2em;
+}
+.purchase--container{
+    background-color: var(--grey);
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--white);
+}
+.purchase--time--container{
+    position: absolute;
+    top: 0;
+    right: 0em;
+    display: flex;
+    color: var(--black);
+    background-color: var(--white);
+    padding: 0.5em;
+    font-size: .9em;
+}
+.purchase--poster{
+    width: 10em;
+}
+.purchase--data--container{
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    height: 10em;
+    width: 20%;
+}
+.purchase--data--title{
+    background-color: var(--violet-white);
+    color: var(--grey);
+    padding: .25em;
+    font-size: 1em;
+}
+.movie--detail--button__viewdetail{
+    margin: 5em 2em 0 0;
+}
+.purchase--schedule--list, .purchase--products--list{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+/* PURCHASE DETAIL */
+.purchase--detail--container{
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    position: relative;
+    padding: 1em 4em;
+    margin-bottom: 1em;
+    border: 2px solid var(--white);
+}
+.purchase--detail{
+    border-right: 2px solid var(--violet-white);
+    padding-right: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    width: 20%;
+}
+.movie--detail--button__gomovie{
+    margin: 0;
+    background-color: var(--black);
+    opacity: 1;
+}.movie--detail--button__gomovie:hover{
+    border: 2px solid var(--white);
+    background-color: var(--black);
+}
+
+.purchases--notfound{
+    font-size: 1em;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 1em;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* FILTROS PURCHASES */
+.filter--purchases--container{
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    margin: 1em 0;
+    border: 2px solid var(--white);
+}
+.filter--purchases--button{
+    font-family: 'Oswald';
+    padding: .5em;
+    transition: .3s;
+}.filter--purchases--button__selected{
+    transition: .3s;
+    background-color: var(--white);
+    color: var(--black);
+}

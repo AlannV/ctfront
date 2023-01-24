@@ -1,0 +1,26 @@
+.filters--select--container{
+    color: var(--white);
+    display: flex;
+    margin: 1em 0;
+    gap: 1em;
+    justify-content: center;
+}
+.filters--select{
+    border-radius: 5px;
+    font-family: 'Roboto';
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    background-color: var(--white);
+    color: var(--black);
+    padding: .5em;
+}
+
+.filters--select:hover{
+    border-color: #9ecaed;
+    box-shadow: 0 0 0.5rem #9ecaed;
+}
+
+.filters--option{
+    color: var(--black);
+}

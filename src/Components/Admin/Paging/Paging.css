@@ -1,0 +1,21 @@
+.page-numbers-container{
+  display: flex;
+}
+
+.page-numbers {
+  justify-content: center;
+  align-items: center;
+  border: solid 1px white;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  font-family: "roboto";
+  font-weight: bolder;
+}
+
+.page-numbers:hover {
+  background-color: var(--white);
+  color: var(--black);
+  cursor: pointer;
+  transform: scale(1.1);
+}

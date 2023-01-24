@@ -1,0 +1,90 @@
+:root {
+  --effect: hover 1s linear infinite;
+}
+
+@keyframes hover {
+  0% {
+    transform: scale(.5);
+    color: #121212;
+    -webkit-text-stroke: 2px gray;
+  }
+
+  20% {
+    transform: scale(1);
+    color: white;
+    -webkit-text-stroke: 3px white;
+  }
+
+  50% {
+    transform: scale(.5);
+    color: #121212;
+    -webkit-text-stroke: 2px gray;
+  }
+}
+
+.loading--main--container {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.loading--container {
+  position: relative;
+  text-align: center;
+}
+
+.loading--letter {
+  display: inline-block;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 4rem;
+  font-family: "Oswald", "Roboto";
+  font-weight: 600;
+  transform: scale(0.5);
+  color: #121212;
+  -webkit-text-stroke: 2px gray;
+}
+
+.loading--letter:nth-child(1) {
+  animation: var(--effect);
+}
+
+.loading--letter:nth-child(2) {
+  animation: var(--effect) .100s;
+}
+
+.loading--letter:nth-child(3) {
+  animation: var(--effect) .200s;
+}
+
+.loading--letter:nth-child(4) {
+  animation: var(--effect) .300s;
+}
+
+.loading--letter:nth-child(5) {
+  animation: var(--effect) .400s;
+}
+
+.loading--letter:nth-child(6) {
+  animation: var(--effect) .500s;
+}
+
+.loading--letter:nth-child(7) {
+  animation: var(--effect) .600s;
+}
+
+.loading--letter:nth-child(8) {
+  animation: var(--effect) .700s;
+}
+
+.loading--letter:nth-child(9) {
+  animation: var(--effect) .800s;
+}
+
+.loading--letter:nth-child(10) {
+  animation: var(--effect) .900s;
+}
+

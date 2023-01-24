@@ -1,0 +1,26 @@
+.ban-user-main-container{
+  margin-top: 6rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Oswald", "Roboto";
+  color: var(--white);
+  user-select: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+}
+
+.ban-user-sub-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 75vh;
+}
+
+.ban-user{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

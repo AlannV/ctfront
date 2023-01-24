@@ -1,0 +1,24 @@
+.all--reviews--container{
+    display: flex;
+    flex-direction: column;
+}
+.user--review--container{
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    padding: 1em 2em;
+    gap: 4em;
+}
+.review--data{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+.review--data--rate{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+.review--data--text{
+    font-family: 'Roboto';
+}

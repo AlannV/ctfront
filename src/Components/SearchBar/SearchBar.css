@@ -1,0 +1,17 @@
+.searchbar--input{
+    font-family: 'Roboto';
+}
+.searchbar--input{
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 2px solid var(--white);
+    color: var(--black);
+    background-color: var(--white);
+}.searchbar--input:focus{
+    outline: 0;
+}
+
+.searchbar--input:hover{
+    border-color: #9ecaed;
+    box-shadow: 0 0 0.5rem #9ecaed;
+}
