@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import {
-  getRooms,
-  getAllMovies,
-  createSchedule,
-} from "../../../../Redux/Actions";
+import { getRooms } from "../../../../Redux/Actions/rooms";
+import { getAllMovies } from "../../../../Redux/Actions/movies";
+import { createSchedule } from "../../../../Redux/Actions/schedules";
 
 import "./CreateSchedule.css";
 

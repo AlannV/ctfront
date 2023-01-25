@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { v4 as randomId } from "uuid";
 
-import { getSeats, createRoom, getDisplays } from "../../../../Redux/Actions";
+import { getSeats, getDisplays } from "../../../../Redux/Actions/";
+import { createRoom } from "../../../../Redux/Actions/rooms";
 
-import Loading from "../../../Loading/Loading";
+import Loading from "../../../Common/Loading/Loading";
 
 import "./CreateRoom.css";
 

@@ -2,10 +2,13 @@ import React from "react";
 import "./Schedule.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getScheduleByMovie, resetSchedule } from "./../../Redux/Actions/index";
+import {
+  getScheduleByMovie,
+  resetSchedule,
+} from "./../../Redux/Actions/schedules";
 import { Link, useParams } from "react-router-dom";
 import ScheduleCard from "./ScheduleCard";
-import EmptyRoute from "../Loading/EmptyRoute";
+import Loading from "../Common/Loading/Loading";
 
 // ICONS
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
@@ -27,11 +30,13 @@ export default function ScheduleByMovie() {
   const nowt =
     now1.getHours() + ":" + now1.getMinutes() + ":" + now1.getSeconds();
 
+  let active = true;
+
   return (
     <div className="schedule--container">
       {schedule.length === 0 ? (
         <div className="schedule--container-2">
-          <EmptyRoute/>
+          <Loading />
         </div>
       ) : (
         <>
@@ -41,48 +46,53 @@ export default function ScheduleByMovie() {
             alt={schedule[0].Movie.title}
           />
           <div className="schedule--cards--container">
-            {schedule.map((m) => {
-              if (
-                m.day.split("-")[0] <= nowd.split("-")[0] &&
-                m.day.split("-")[1] <= nowd.split("-")[1] &&
-                m.day.split("-")[2] < nowd.split("-")[2]
-              ) return ""
-              else if (
-                  m.day.split("-")[2] === nowd.split("-")[2] &&
-                  parseInt(m.time.split(":")[0]) <= parseInt(nowt.split(":")[0]) 
-                ) return "";
+            {active &&
+              schedule.map((m) => {
+                if (
+                  m.day.split("-")[0] <= nowd.split("-")[0] &&
+                  m.day.split("-")[1] <= nowd.split("-")[1] &&
+                  m.day.split("-")[2] < nowd.split("-")[2]
+                )
+                  return "";
                 else if (
-                  parseInt(m.time.split(":")[0]) <= parseInt(nowt.split(":")[0]) &&
+                  m.day.split("-")[2] === nowd.split("-")[2] &&
+                  parseInt(m.time.split(":")[0]) <= parseInt(nowt.split(":")[0])
+                )
+                  return "";
+                else if (
+                  parseInt(m.time.split(":")[0]) <=
+                    parseInt(nowt.split(":")[0]) &&
                   parseInt(m.time.split(":")[1]) < parseInt(nowt.split(":")[1])
-                ) return "";
-              else
-                return (
-                  <Link
-                    className="schedule--card--container"
-                    key={m.schedule_id}
-                    to={
-                      m.Room.room_seats.length > m.boughtSeats.length
-                        ? "/schedule/" + m.schedule_id
-                        : ""
-                    }
-                  >
-                    {" "}
-                    {/* SOLD OUT */}
-                    <ScheduleCard
-                      day={m.day}
-                      name={m.Movie.title}
-                      time={m.time}
-                      room={m.Room.name}
-                      display={m.Room.display_type}
-                    />
-                    <KeyboardDoubleArrowRightIcon fontSize="large" />
-                    {m.Room.room_seats.length <= m.boughtSeats.length && (
-                      <p className="sold--out">SOLD OUT</p>
-                    )}
-                  </Link>
-                );
-              }
-            )}
+                )
+                  return "";
+                else
+                  return (
+                    <Link
+                      className="schedule--card--container"
+                      key={m.schedule_id}
+                      to={
+                        "/schedule/" + m.schedule_id
+                        // m.Room.room_seats.length > m.boughtSeats.length
+                        // ?
+                        // : ""
+                      }
+                    >
+                      {" "}
+                      {/* SOLD OUT */}
+                      <ScheduleCard
+                        day={m.day}
+                        name={m.Movie.title}
+                        time={m.time}
+                        room={m.Room.name}
+                        display={m.Room.display_type}
+                      />
+                      {/* <KeyboardDoubleArrowRightIcon fontSize="large" />
+                      {m.Room.room_seats.length <= m.boughtSeats.length && (
+                        <p className="sold--out">SOLD OUT</p>
+                      )} */}
+                    </Link>
+                  );
+              })}
           </div>
           <div className="movie--detail--button--container movie--detail--button__goback schedule--button--goback">
             <Link className="movie--detail--button" to={`/movie/${id}`}>

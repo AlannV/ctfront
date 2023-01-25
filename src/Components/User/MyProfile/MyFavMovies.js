@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getAllUsers, getFav, getMovies } from "../../../Redux/Actions/index";
-import { useAuth } from "../../Context/authContext";
-import EmptyRoute from "../../Loading/EmptyRoute";
+import { getMovies } from "../../../Redux/Actions/movies";
+import { getAllUsers } from "../../../Redux/Actions/user";
+import { useAuth } from "../../Auth/Context/authContext";
+import Loading from "../../Common/Loading/Loading";
 
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 
@@ -14,7 +15,6 @@ export const MyFavMovies = () => {
   const dispatch = useDispatch();
   const uid = authUser?.uid;
   useEffect(() => {
-    /* dispatch(getFav(uid)) */
     dispatch(getMovies());
     dispatch(getAllUsers());
   }, [dispatch, getMovies, getAllUsers]);
@@ -29,7 +29,7 @@ export const MyFavMovies = () => {
     if (favMoviesIds?.includes(movies[i].movie_id)) favMovies.push(movies[i]);
   }
   return favMovies.length === 0 ? (
-    <EmptyRoute />
+    <Loading />
   ) : (
     <div className="movie--favorite--container">
       {favMovies ? (
@@ -83,7 +83,7 @@ export const MyFavMovies = () => {
           })}
         </div>
       ) : (
-        <EmptyRoute />
+        <Loading />
       )}
       <div className="movie--detail--button--container movie--detail--button__goback">
         <Link className="movie--detail--button" to={"/myprofile"}>

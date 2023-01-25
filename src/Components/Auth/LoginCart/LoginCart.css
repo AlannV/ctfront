@@ -1,0 +1,92 @@
+@import url(../../../index.css);
+
+.header--container {
+  position: inherit;
+}
+.login--container {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--black);
+  width: 40vw;
+  font-family: "Oswald", "Roboto";
+  overflow: hidden;
+  padding: 1.5em;
+  border: 2px solid #7858a6;
+  margin: 14em auto;
+}
+.login--title {
+  border-bottom: 2px solid var(--white);
+  color: var(--white);
+  width: 100%;
+  padding: 0 0 0.25em 3em;
+  margin: 0;
+}
+.login--form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  color: var(--violet-white);
+  width: 80%;
+  margin: 1em auto;
+}
+.login--container--email,
+.login--container--password {
+  display: flex;
+  flex-direction: column;
+}
+.login--input {
+  font-family: "Oswald";
+  font-size: 1.25em;
+  outline: 0;
+  border: none;
+  border-bottom: 2px solid var(--violet-white);
+  background-color: transparent;
+  padding: 0.25em;
+  color: var(--white);
+}
+.login--input::placeholder {
+  color: var(--violet-white);
+  opacity: 0.5;
+}
+
+.login--buttons-container {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.login--button {
+  font-family: "Oswald", "Roboto";
+  border: 2px solid var(--violet-white);
+  padding: 1em;
+  transition: 0.3s;
+}
+.login--button:hover {
+  background-color: var(--violet-white);
+  cursor: pointer;
+  color: var(--black);
+  transition: 0.3s;
+}
+
+.login--user--buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 50%;
+  align-items: flex-start;
+}
+.login--user--button {
+  color: var(--white);
+  border-bottom: 2px solid var(--violet-black);
+  padding: 0.5em;
+  text-align: center;
+  transition: 0.3s;
+}
+.login--user--button:hover {
+  filter: brightness(200%);
+  transform: translate(1em, 0);
+  transition: 0.3s;
+}
+
+@media (min-width: 300px) {
+}

@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { resetUserPassword } from "../../../../Redux/Actions";
 
 import "./ResetUserPassword.css";
-import { useAuth } from "../../../Context/authContext";
+import { useAuth } from "../../../Auth/Context/authContext";
 
 function ResetUserPassword() {
   const dispatch = useDispatch();

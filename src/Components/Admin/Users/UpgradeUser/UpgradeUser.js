@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { modifyRole } from "../../../../Redux/Actions";
+import { modifyRole } from "../../../../Redux/Actions/user";
 
 import "./UpgradeUser.css";
 

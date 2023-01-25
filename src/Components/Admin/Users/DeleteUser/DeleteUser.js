@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { deleteUser } from "../../../../Redux/Actions";
+import { deleteUser } from "../../../../Redux/Actions/user";
 
 import "./DeleteUser.css";
 

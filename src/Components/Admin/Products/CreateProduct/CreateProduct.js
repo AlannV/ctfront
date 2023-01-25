@@ -3,7 +3,8 @@ import "./CreateProduct.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { createProduct, startUploadingFiles } from "../../../../Redux/Actions";
+import { createProduct } from "../../../../Redux/Actions/products";
+import { startUploadingFiles } from "../../../../Redux/Actions";
 
 function CreateProduct() {
   const dispatch = useDispatch();

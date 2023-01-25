@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { createUser } from "../../../../Redux/Actions";
 import { useDispatch } from "react-redux";
-import { newUser } from "../../../../Redux/Actions";
+
+import { createUser } from "../../../../Redux/Actions/user";
+import { newUser } from "../../../../Redux/Actions/user";
 
 import "./CreateUser.css";
 import { passwordValidator } from "../../../helpers/PasswordValidator";
@@ -19,44 +20,6 @@ function CreateUser() {
   });
 
   const [passShow, setPassShow] = useState(false);
-
-  /* function handleValidationPassword(pass) {
-    const uppercaseRegExp = /(?=.*?[A-Z])/;
-    const lowercaseRegExp = /(?=.*?[a-z])/;
-    const digitsRegExp = /(?=.*?[0-9])/;
-    const specialCharRegExp = /(?=.*?[#?!@$%^&*-])/;
-    const minLengthRegExp = /.{8,}/;
-    const passwordLength = pass.length;
-    const uppercasePassword = uppercaseRegExp.test(pass);
-    const lowercasePassword = lowercaseRegExp.test(pass);
-    const digitsPassword = digitsRegExp.test(pass);
-    const specialCharPassword = specialCharRegExp.test(pass);
-    const minLengthPassword = minLengthRegExp.test(pass);
-
-    if (passwordLength === 0) {
-      return alert("Password is empty");
-    } else if (!uppercasePassword) {
-      return alert("The password must have at least one Uppercase");
-    } else if (!lowercasePassword) {
-      return alert("The password must have at least one Lowercase");
-    } else if (!digitsPassword) {
-      return alert("The password must have at least one digit");
-    } else if (!specialCharPassword) {
-      return alert("The password must have at least one Special Characters");
-    } else if (!minLengthPassword) {
-      return alert("The password must have at least minumum 8 characters");
-    } else if (input.password !== input.confirmPassword) {
-      return alert("Passwords do not match");
-    }
-  }
-
-  function handleValidationEmail(email) {
-    const emailRegExp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    const emailValidation = emailRegExp.test(email);
-    if (!emailValidation) {
-      return alert("Invalid email format");
-    }
-  } */
 
   function handleChange(e) {
     e.preventDefault();
@@ -86,11 +49,8 @@ function CreateUser() {
   }
 
   function handleSubmit(e) {
-
-    passwordValidator(input.password, input.confirmPassword)
-    emailValidator(input.email)
-    /* handleValidationPassword(input.password);
-    handleValidationEmail(input.email); */
+    passwordValidator(input.password, input.confirmPassword);
+    emailValidator(input.email);
 
     e.preventDefault();
     dispatch(createUser(input));

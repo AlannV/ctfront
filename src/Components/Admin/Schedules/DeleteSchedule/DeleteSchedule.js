@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { getRooms } from "../../../../Redux/Actions/rooms";
+import { getAllMovies } from "../../../../Redux/Actions/movies";
 import {
   getSchedules,
-  getRooms,
-  getAllMovies,
-  deleteSchedule,
   activateSchedule,
-} from "../../../../Redux/Actions";
-import Loading from "../../../Loading/Loading";
+  deleteSchedule,
+} from "../../../../Redux/Actions/schedules";
+import Loading from "../../../Common/Loading/Loading";
 import Paging from "../../Paging/Paging";
 
 import "./DeleteSchedule.css";

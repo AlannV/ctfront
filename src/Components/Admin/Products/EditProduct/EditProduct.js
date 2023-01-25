@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-  editProduct,
-  getProducts,
-  startUploadingFiles,
-} from "../../../../Redux/Actions";
-import Loading from "../../../Loading/Loading";
+import { startUploadingFiles } from "../../../../Redux/Actions";
+import { editProduct, getProducts } from "../../../../Redux/Actions/products";
+import Loading from "../../../Common/Loading/Loading";
 import Paging from "../../Paging/Paging";
 import "./EditProduct.css";
 import { v4 as randomId } from "uuid";

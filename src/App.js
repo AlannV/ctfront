@@ -1,16 +1,18 @@
-import Home from "./Components/Home/Home";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import MovieDetails from "./Components/MovieDetails/MovieDetails";
+import { AuthProvider } from "./Components/Auth/Context/authContext";
+
+import Home from "./Components/Common/Home/Home";
+
+import MovieDetails from "./Components/Movies/MovieDetails/MovieDetails";
 import AdminMenu from "./Components/Admin/AdminMenu/AdminMenu";
-import Login from "./Components/Login/Login";
-import Register from "./Components/Register/Register";
-import { AuthProvider } from "./Components/Context/authContext";
+import Login from "./Components/Auth/Login";
+import Register from "./Components/Auth/Register/Register";
 import Schedule from "./Components/Schedule/Schedule";
 import ScheduleByMovie from "./Components/Schedule/ScheduleByMovie";
 import Room from "./Components/Room/Room";
-import Cart from "./Components/Cart/Cart";
+import Cart from "./Components/BuyProcess/Cart/Cart";
 
 import BanUser from "./Components/Admin/Users/BanUser/BanUser.js";
 import ActivateUser from "./Components/Admin/Users/ActivateUser/ActivateUser";
@@ -39,19 +41,19 @@ import Success from "./Components/BuyProcess/Succes/Success";
 import Pending from "./Components/BuyProcess/Pending/Pending";
 import Fail from "./Components/BuyProcess/Fail/Fail";
 
-import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute.js";
-import Error from "./Components/Error/Error";
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
-import { Terms } from "./Components/Footer/FooterComponents/Terms";
-import { AboutUs } from "./Components/Footer/FooterComponents/AboutUs";
-import { ContactUs } from "./Components/Footer/FooterComponents/ContactUs";
-import { Building } from "./Components/Building/Building";
 import Products from "./Components/User/Products/Products";
+import ProtectedRoute from "./Components/Auth/ProtectedRoute/ProtectedRoute.js";
+import Error from "./Components/Common/Error/Error";
+import Header from "./Components/Common/Header/Header";
+import Footer from "./Components/Common/Footer/Footer";
+import PasswordChange from "./Components/User/MyProfile/PasswordChange";
+import MyPurchases from "./Components/User/MyProfile/MyPurchases";
+
+import { AboutUs } from "./Components/Common/Footer/FooterComponents/AboutUs";
+import { ContactUs } from "./Components/Common/Footer/FooterComponents/ContactUs";
+import { Terms } from "./Components/Common/Footer/FooterComponents/Terms";
 import { MyProfile } from "./Components/User/MyProfile/MyProfile";
 import { MyFavMovies } from "./Components/User/MyProfile/MyFavMovies";
-import MyPurchases from "./Components/User/MyProfile/MyPurchases";
-import PasswordChange from "./Components/User/MyProfile/PasswordChange";
 
 function App() {
   return (
@@ -61,26 +63,12 @@ function App() {
           <Header />
           <Routes>
             <Route exact path="/" element={<Home />} />
-
             <Route exact path="/schedule" element={<Schedule />} />
-
             <Route path="/schedule/:id" element={<Room />} />
-
             <Route exact path="/movie/:id" element={<MovieDetails />} />
-
             <Route path="/movie/buy/:id" element={<ScheduleByMovie />} />
-
             <Route exact path="/cart" element={<Cart />} />
 
-            <Route
-              exact
-              path="/adminmenu"
-              element={
-                <ProtectedRoute>
-                  <AdminMenu />
-                </ProtectedRoute>
-              }
-            />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/register" element={<Register />} />
 
@@ -90,7 +78,6 @@ function App() {
 
             <Route exact path="/contact" element={<ContactUs />} />
             <Route exact path="/about" element={<AboutUs />} />
-            <Route exact path="/building" element={<Building />} />
             <Route exact path="/products" element={<Products />} />
             <Route exact path="/myprofile" element={<MyProfile />} />
             <Route exact path="/myfavorites" element={<MyFavMovies />} />
@@ -282,9 +269,7 @@ function App() {
             />
 
             <Route exact path="/payment/success" element={<Success />} />
-
             <Route exact path="/payment/fail" element={<Fail />} />
-
             <Route exact path="/payment/pending" element={<Pending />} />
 
             {/* Error Route */}

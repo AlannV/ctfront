@@ -1,4 +1,4 @@
-@import "./../../index.css";
+@import "./index.css";
 
 .app {
   display: flex;
@@ -6,9 +6,9 @@
   align-items: center;
   user-select: none;
 }
-.errorLogin{
-  color: white
-  }
+.errorLogin {
+  color: white;
+}
 
 .schedule {
   color: #ffffffcc;

@@ -1,6 +1,5 @@
 import React from "react";
 import "./Paging.css";
-import { v4 as randomId } from "uuid";
 
 export default function Paging({ itemsPerPage, allItems, paging }) {
   const pageNumbers = [];

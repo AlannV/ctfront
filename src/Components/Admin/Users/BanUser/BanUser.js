@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { banUser } from "../../../../Redux/Actions";
+import { banUser } from "../../../../Redux/Actions/user";
 
 import "./BanUser.css";
 

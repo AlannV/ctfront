@@ -1,22 +1,14 @@
 import "./MyPurchases.css";
 
 import React, { useEffect, useState } from "react";
-
 import PurchaseDetail from "./PurchaseDetail.js";
-
 import { Link } from "react-router-dom";
-
-import { useAuth } from "../../Context/authContext";
-
+import { useAuth } from "../../Auth/Context/authContext";
 import { connect } from "react-redux";
+import { getAllMovies } from "../../../Redux/Actions/movies";
+import { getPurchasesByEmail } from "../../../Redux/Actions/";
+import { getAllUsers } from "../../../Redux/Actions/user";
 
-import {
-  getAllMovies,
-  getPurchasesByEmail,
-  getAllUsers,
-} from "../../../Redux/Actions/index.js";
-
-// ICONS
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";

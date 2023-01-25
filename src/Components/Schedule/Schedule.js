@@ -2,7 +2,7 @@ import React from "react";
 import "./Schedule.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllSchedule } from "./../../Redux/Actions/index";
+import { getAllSchedule } from "./../../Redux/Actions/schedules";
 import { Link } from "react-router-dom";
 import ScheduleCardGral from "./ScheduleCardGral";
 
@@ -32,20 +32,24 @@ export default function Schedule() {
       ) : (
         <>
           <div className="schedule--cards--container">
-          {schedule.map((m) => {
+            {schedule.map((m) => {
               if (
                 m.day.split("-")[0] <= nowd.split("-")[0] &&
                 m.day.split("-")[1] <= nowd.split("-")[1] &&
                 m.day.split("-")[2] < nowd.split("-")[2]
-              ) return ""
+              )
+                return "";
               else if (
-                  m.day.split("-")[2] === nowd.split("-")[2] &&
-                  parseInt(m.time.split(":")[0]) <= parseInt(nowt.split(":")[0]) 
-                ) return "";
-                else if (
-                  parseInt(m.time.split(":")[0]) <= parseInt(nowt.split(":")[0]) &&
-                  parseInt(m.time.split(":")[1]) < parseInt(nowt.split(":")[1])
-                ) return "";
+                m.day.split("-")[2] === nowd.split("-")[2] &&
+                parseInt(m.time.split(":")[0]) <= parseInt(nowt.split(":")[0])
+              )
+                return "";
+              else if (
+                parseInt(m.time.split(":")[0]) <=
+                  parseInt(nowt.split(":")[0]) &&
+                parseInt(m.time.split(":")[1]) < parseInt(nowt.split(":")[1])
+              )
+                return "";
               else
                 return (
                   <Link
@@ -72,8 +76,7 @@ export default function Schedule() {
                     )}
                   </Link>
                 );
-              }
-            )}
+            })}
           </div>
           <br />
           <br />

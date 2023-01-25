@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as randomId } from "uuid";
 
+import { editMovie } from "../../../../Redux/Actions/movies";
 import {
-  editMovie,
   getGenres,
   getLanguages,
   resetSearch,

@@ -11,7 +11,7 @@ import { v4 as randomId } from "uuid";
 
 import { Link } from "react-router-dom";
 
-import { useAuth } from "../../../Context/authContext";
+import { useAuth } from "../../../Auth/Context/authContext";
 
 import "./Purchases.css";
 import Paging from "../../Paging/Paging";

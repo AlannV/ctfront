@@ -7,11 +7,11 @@ import {
   getGenres,
   getLanguages,
   getDisplays,
-  createMovie,
   startUploadingFiles,
 } from "../../../../Redux/Actions";
+import { createMovie } from "../../../../Redux/Actions/movies";
 
-import Loading from "../../../Loading/Loading";
+import Loading from "../../../Common/Loading/Loading";
 
 import "./CreateMovie.css";
 

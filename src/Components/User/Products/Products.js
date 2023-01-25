@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getProducts } from "../../../Redux/Actions";
+import { getProducts } from "../../../Redux/Actions/products";
 
 function Products() {
   const dispatch = useDispatch();

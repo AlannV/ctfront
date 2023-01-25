@@ -2,9 +2,13 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { getRooms, deleteRoom, activateRoom } from "../../../../Redux/Actions";
+import {
+  getRooms,
+  deleteRoom,
+  activateRoom,
+} from "../../../../Redux/Actions/rooms";
 
-import Loading from "../../../Loading/Loading";
+import Loading from "../../../Common/Loading/Loading";
 
 import "./DeleteRoom.css";
 

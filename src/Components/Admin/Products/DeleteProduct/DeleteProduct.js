@@ -7,12 +7,12 @@ import {
   deleteProduct,
   activateProduct,
   getProducts,
-} from "../../../../Redux/Actions";
+} from "../../../../Redux/Actions/products";
 
 import "./DeleteProduct.css";
 
 import Paging from "../../Paging/Paging";
-import Loading from "../../../Loading/Loading";
+import Loading from "../../../Common/Loading/Loading";
 
 function DeleteProduct() {
   const dispatch = useDispatch();

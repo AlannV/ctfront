@@ -2,7 +2,7 @@ import React from "react";
 import "./Room.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getScheduleById, delSchedule } from "../../Redux/Actions/index";
+import { getScheduleById, delSchedule } from "../../Redux/Actions/schedules";
 import { Link, useParams } from "react-router-dom";
 
 // ICONS
@@ -116,7 +116,8 @@ export default function Room() {
                   {roomxd.Room.name.toUpperCase()}
                 </li>
                 <li className="screen--info--item">
-                  ${roomxd.price.toFixed(2)}each - Total ${roomxd.price*selected.length.toFixed(2)} 
+                  ${roomxd.price.toFixed(2)}each - Total $
+                  {roomxd.price * selected.length.toFixed(2)}
                 </li>
               </ul>
             </div>

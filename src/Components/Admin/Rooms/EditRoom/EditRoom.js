@@ -3,13 +3,9 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as randomId } from "uuid";
 
-import {
-  editRoom,
-  getDisplays,
-  getRooms,
-  getSeats,
-} from "../../../../Redux/Actions";
-import Loading from "../../../Loading/Loading";
+import { editRoom, getRooms } from "../../../../Redux/Actions/rooms";
+import { getDisplays, getSeats } from "../../../../Redux/Actions";
+import Loading from "../../../Common/Loading/Loading";
 
 import "./EditRoom.css";
 

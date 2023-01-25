@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getMovieName } from "../../../Redux/Actions/index.js";
+import { getMovieName } from "../../../Redux/Actions/movies";
 
 import "./AdminSearchBar.css";
 

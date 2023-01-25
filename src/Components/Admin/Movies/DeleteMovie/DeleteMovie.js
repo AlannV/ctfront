@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as randomId } from "uuid";
 
-import { getAllMovies } from "../../../../Redux/Actions/index.js";
-import { deleteMovie, activateMovie } from "../../../../Redux/Actions/index.js";
+import {
+  getAllMovies,
+  deleteMovie,
+  activateMovie,
+} from "../../../../Redux/Actions/movies";
 
-import Loading from "../../../Loading/Loading.js";
+import Loading from "../../../Common/Loading/Loading.js";
 
 import "./DeleteMovie.css";
 import Paging from "../../Paging/Paging.js";

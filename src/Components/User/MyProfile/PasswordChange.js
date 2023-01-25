@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { changePassword } from "../../../Redux/Actions";
 
 import "./PasswordChange.css";
-import { useAuth } from "../../Context/authContext";
+import { useAuth } from "../../Auth/Context/authContext";
 import { passwordValidator } from "../../helpers/PasswordValidator";
 
 function PasswordChange() {
