@@ -10,6 +10,7 @@ const {
 } = process.env;
 
 export function createRoom(payload) {
+  console.log(payload);
   return async function () {
     try {
       await axios.post(REACT_APP_POST_CREATE_ROOM, payload);

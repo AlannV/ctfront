@@ -115,7 +115,8 @@ export function getSeats() {
   return async function (dispatch) {
     try {
       let response = await axios.get(REACT_APP_GET_ALL_SEATS);
-      return dispatch({ type: GET_SEATS, payload: response.data });
+      response = response.data.map((s) => s.name);
+      return dispatch({ type: GET_SEATS, payload: response });
     } catch (error) {
       console.error(error);
     }

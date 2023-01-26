@@ -22,8 +22,6 @@ function CreateRoom() {
   const display = useSelector((state) => state.displays);
   const seats = useSelector((state) => state.seats);
 
-  input.room_seats = seats;
-
   useEffect(() => {
     dispatch(getSeats());
     dispatch(getDisplays());
@@ -53,6 +51,7 @@ function CreateRoom() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    input.room_seats = seats;
     input.display_type = input.display_type.toString();
     dispatch(createRoom(input));
     setInput({
