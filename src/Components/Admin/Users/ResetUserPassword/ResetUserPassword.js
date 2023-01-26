@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { resetUserPassword } from "../../../../Redux/Actions";
 
 import "./ResetUserPassword.css";
 import { useAuth } from "../../../Auth/Context/authContext";
 
 function ResetUserPassword() {
-  const dispatch = useDispatch();
-
   const resetPassword = useAuth();
 
   const [input, setInput] = useState({
@@ -25,12 +22,6 @@ function ResetUserPassword() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // dispatch(resetUserPassword(input));
-    // setInput({
-    //   email: "",
-    // });
-    // e.target.reset();
-    // if (!e.target.value) return alert("Porfavor ingrese un email");
     try {
       await resetPassword(e.target.value);
       alert(

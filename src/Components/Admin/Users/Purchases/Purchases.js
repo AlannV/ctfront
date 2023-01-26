@@ -30,7 +30,7 @@ function Purchases() {
   useEffect(() => {
     dispatch(getAllPurchases(authUser.email));
     dispatch(getPurchasesByEmail(authUser.email));
-  }, []);
+  }, [dispatch]);
 
   const currentPurchases = purchases?.slice(
     indexOfFirstPurchase,

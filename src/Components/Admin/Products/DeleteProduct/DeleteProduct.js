@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { v4 as randomId } from "uuid";
@@ -20,7 +20,7 @@ function DeleteProduct() {
   const products = useSelector((state) => state.products);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(10);
+  const [productsPerPage] = useState(10);
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products?.slice(
@@ -33,10 +33,6 @@ function DeleteProduct() {
 
   function paging(pageNumber) {
     setCurrentPage(pageNumber);
-  }
-
-  function handlePagesChange(e) {
-    setProductsPerPage(e.target.value);
   }
 
   function handleDeactivate(e) {

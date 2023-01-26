@@ -15,7 +15,7 @@ function EditProduct() {
   const imgCloudinary = useSelector((state) => state.productImg);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(10);
+  const [productsPerPage] = useState(10);
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products?.slice(
@@ -38,10 +38,6 @@ function EditProduct() {
 
   function paging(pageNumber) {
     setCurrentPage(pageNumber);
-  }
-
-  function handlePagesChange(e) {
-    setProductsPerPage(e.target.value);
   }
 
   function handleChange(e) {

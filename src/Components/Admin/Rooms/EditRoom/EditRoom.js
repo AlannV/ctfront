@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { v4 as randomId } from "uuid";
 
 import { editRoom, getRooms } from "../../../../Redux/Actions/rooms";
-import { getDisplays, getSeats } from "../../../../Redux/Actions";
+import { getDisplays } from "../../../../Redux/Actions";
 import Loading from "../../../Common/Loading/Loading";
 
 import "./EditRoom.css";
@@ -14,7 +14,6 @@ function EditRoom() {
 
   const [input, setInput] = useState({
     name: "",
-    // room_seats: [],
     display_type: [],
   });
 
@@ -72,9 +71,6 @@ function EditRoom() {
     input.display_type = input.display_type.toString();
     e.preventDefault();
     dispatch(editRoom(roomId, input));
-    // setTimeout(() => {
-    //   dispatch(getRooms());
-    // }, 1000);
   }
 
   return (
