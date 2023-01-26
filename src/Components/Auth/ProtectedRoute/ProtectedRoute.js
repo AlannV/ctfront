@@ -17,7 +17,7 @@ export default function ProtectedRoute({ children }) {
 
   const checkRoles = () => {
     axios
-      .post("http://localhost:3001/users/isAdmin", {
+      .post("https://ctback-production.up.railway.app/users/isAdmin", {
         token: token,
       })
       .then((res) => {

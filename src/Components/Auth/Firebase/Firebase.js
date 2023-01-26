@@ -41,7 +41,7 @@ function App() {
       .then(({ user }) => {
         return user.getIdToken().then((idToken) => {
           return axios
-            .get("http://localhost:3001/", {
+            .get("https://ctback-production.up.railway.app/", {
               headers: {
                 Authorization: "Bearer " + idToken,
               },

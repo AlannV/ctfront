@@ -42,7 +42,10 @@ export function AuthProvider({ children }) {
               role: "B",
             };
             axios
-              .post("http://localhost:3001/users/createUser", newUser)
+              .post(
+                "https://ctback-production.up.railway.app/users/createUser",
+                newUser
+              )
               .then((res) => {
                 setAuthUser({
                   email: newUser.email,
@@ -81,40 +84,45 @@ export function AuthProvider({ children }) {
   const loginGoogle = () => {
     const googleProvider = new GoogleAuthProvider();
     signInWithPopup(auth, googleProvider).then(({ user }) => {
-      axios.get("http://localhost:3001/users/getAll").then((res) => {
-        const emailRef = res.data.filter(
-          (fbUser) => fbUser.email === user.email
-        );
-        if (emailRef.length === 0) {
-          const newUser = {
-            email: user.email,
-            token: user.accessToken,
-            username: user.displayName,
-            role: "B",
-          };
-          axios
-            .post("http://localhost:3001/users/createUser", newUser)
-            .then((res) => {
-              if (res.status === 201) {
-                setAuthUser({
-                  email: newUser.email,
-                  name: newUser.username,
-                  token: newUser.token,
-                });
-                window.localStorage.setItem("token", newUser.token);
-              } else {
-                logOut();
-              }
+      axios
+        .get("https://ctback-production.up.railway.app/users/getAll")
+        .then((res) => {
+          const emailRef = res.data.filter(
+            (fbUser) => fbUser.email === user.email
+          );
+          if (emailRef.length === 0) {
+            const newUser = {
+              email: user.email,
+              token: user.accessToken,
+              username: user.displayName,
+              role: "B",
+            };
+            axios
+              .post(
+                "https://ctback-production.up.railway.app/users/createUser",
+                newUser
+              )
+              .then((res) => {
+                if (res.status === 201) {
+                  setAuthUser({
+                    email: newUser.email,
+                    name: newUser.username,
+                    token: newUser.token,
+                  });
+                  window.localStorage.setItem("token", newUser.token);
+                } else {
+                  logOut();
+                }
+              });
+          } else {
+            setAuthUser({
+              email: user.email,
+              token: user.accessToken,
+              name: user.displayName,
             });
-        } else {
-          setAuthUser({
-            email: user.email,
-            token: user.accessToken,
-            name: user.displayName,
-          });
-          window.localStorage.setItem("token", user.accessToken);
-        }
-      });
+            window.localStorage.setItem("token", user.accessToken);
+          }
+        });
     });
   };
 

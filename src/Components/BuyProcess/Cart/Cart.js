@@ -149,7 +149,7 @@ function Cart() {
   async function startPaymentProcess() {
     setToggle(true);
     const paymentBasic = await axios.post(
-      "http://localhost:3001/payment",
+      "https://ctback-production.up.railway.app/payment",
       sendPayment
     );
     if (paymentBasic.status === 400) {

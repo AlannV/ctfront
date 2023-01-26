@@ -33,9 +33,12 @@ export default function LoginCart({ state }) {
     try {
       await logIn(user.email, user.password);
       const credentials = window.localStorage.getItem("token");
-      const isAdmin = await axios.post("http://localhost:3001/users/isAdmin", {
-        token: credentials,
-      });
+      const isAdmin = await axios.post(
+        "https://ctback-production.up.railway.app/users/isAdmin",
+        {
+          token: credentials,
+        }
+      );
       navigate("/cart");
 
       //navigate("/adminmenu");

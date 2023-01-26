@@ -43,7 +43,9 @@ function Header() {
     if (authUser !== null) return true;
     if (token) {
       const isActive = axios
-        .get(`http://localhost:3001/users/isActive?token=${token}`)
+        .get(
+          `https://ctback-production.up.railway.app/users/isActive?token=${token}`
+        )
         .then((res) => {
           if (res.status === 200) {
             const loggedUser = {

@@ -13,9 +13,12 @@ function CheckoutConfirm({ toggleCheckout, setToggleCheckout, paymentData }) {
   });
 
   async function revertPurchase() {
-    await axios.put("http://localhost:3001/payment/revertPurchase", {
-      purchase_id: purchaseID,
-    });
+    await axios.put(
+      "https://ctback-production.up.railway.app/payment/revertPurchase",
+      {
+        purchase_id: purchaseID,
+      }
+    );
   }
 
   async function closeCheckout(e) {
@@ -31,7 +34,7 @@ function CheckoutConfirm({ toggleCheckout, setToggleCheckout, paymentData }) {
 
   async function callMP() {
     const paymentBasic = await axios.post(
-      "http://localhost:3001/payment",
+      "https://ctback-production.up.railway.app/payment",
       paymentData
     );
     setPurchaseID(paymentBasic.data.purchase_id);
