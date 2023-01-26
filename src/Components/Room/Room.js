@@ -24,13 +24,11 @@ export default function Room() {
   const [selected, setSelected] = useState([]);
 
   useEffect(() => {
+    getGlobalData();
     return () => {
       dispatch(delSchedule());
     };
   }, [dispatch]);
-
-  // const date =roomxd.day.split("-")[2]+"-"+roomxd.day.split("-")[1]
-  // const hour =roomxd.time.slice(0,5)
 
   function handleClick(e) {
     e.preventDefault();
@@ -65,10 +63,6 @@ export default function Room() {
     };
     localStorage.setItem("movieCart", JSON.stringify(movieCart));
   }
-
-  useEffect(() => {
-    getGlobalData();
-  }, []);
 
   const checkRender = () => {
     if (Object.keys(roomxd).length > 0) {
@@ -166,30 +160,3 @@ export default function Room() {
 
   return <div>{checkRender()}</div>;
 }
-
-//  {
-//   schedule_id: 9,
-//   day: '2022-07-09',
-//   time: '16:10:00',
-//   active: true,
-//   createdAt: '2022-09-05T01:33:15.724Z',
-//   Movie: {
-//     movie_id: 4,
-//     title: 'The Jack in the Box: Awakening',
-//     poster: 'https://m.media-amazon.com/images/M/MV5BNzA0YzhmZD…OWQyMzI1OTA2XkEyXkFqcGdeQXVyNzU4NzMwMjI@._V1_.jpg',
-//     display: Array(1),
-//     duration: 93}
-//  Room: {
-//     room_id: 2,
-//     name: 'Sala 2',
-//     display_type: '3D'
-//
-//   }
-// active: true
-// createdAt: "2022-09-05T01:33:15.724Z"
-// day: "2022-07-09"
-// movie_id: 4
-// room_id: 2
-// schedule_id: 9
-// time: "16:10:00"
-// updatedAt: "2022-09-05T01:33:15.724Z"

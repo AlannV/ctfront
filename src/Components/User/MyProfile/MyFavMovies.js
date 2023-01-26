@@ -17,7 +17,7 @@ export const MyFavMovies = () => {
   useEffect(() => {
     dispatch(getMovies());
     dispatch(getAllUsers());
-  }, [dispatch, getMovies, getAllUsers]);
+  }, [dispatch]);
 
   const movies = useSelector((state) => state.movies);
   const users = useSelector((state) => state.users);

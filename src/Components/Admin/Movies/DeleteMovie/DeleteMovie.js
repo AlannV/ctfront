@@ -23,18 +23,10 @@ function DeleteMovie() {
 
   const allMovies = useSelector((state) => state.allMovies);
   const [currentPage, setCurrentPage] = useState(1);
-  const [moviesPerPage, setMoviesPerPage] = useState(10);
+  const [moviesPerPage] = useState(10);
   const indexOfLastMovie = currentPage * moviesPerPage;
   const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
   const currentMovies = allMovies?.slice(indexOfFirstMovie, indexOfLastMovie);
-
-  function paging(pageNumber) {
-    setCurrentPage(pageNumber);
-  }
-
-  function handlePagesChange(e) {
-    setMoviesPerPage(e.target.value);
-  }
 
   function handleDelete(e) {
     dispatch(deleteMovie(e));

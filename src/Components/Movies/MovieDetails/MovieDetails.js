@@ -53,6 +53,7 @@ function MovieDetails({
       delMovieDetail();
     };
   }, [
+    dispatch,
     delMovieDetail,
     id,
     getMovieDetail,

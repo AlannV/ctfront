@@ -1,6 +1,6 @@
 import React from "react";
 import "./Schedule.css";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllSchedule } from "./../../Redux/Actions/schedules";
 import { Link } from "react-router-dom";
@@ -13,8 +13,6 @@ import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 export default function Schedule() {
   const dispatch = useDispatch();
   const schedule = useSelector((state) => state.schedule);
-
-  // const [render, setRender] = useState('');
 
   useEffect(() => {
     dispatch(getAllSchedule());

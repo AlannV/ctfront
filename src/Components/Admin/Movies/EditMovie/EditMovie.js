@@ -176,6 +176,7 @@ function EditMovie() {
                 <div className="admin-movie-card" key={movie.movie_id}>
                   <h4>{movie.title}</h4>
                   <img
+                    alt={movie.title}
                     className="admin-movie-img"
                     src={movie.poster}
                     onClick={(_index) => handleFill(index)}

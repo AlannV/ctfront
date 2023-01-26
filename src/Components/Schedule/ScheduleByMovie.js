@@ -10,8 +10,6 @@ import { Link, useParams } from "react-router-dom";
 import ScheduleCard from "./ScheduleCard";
 import Loading from "../Common/Loading/Loading";
 
-// ICONS
-import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 
 export default function ScheduleByMovie() {
