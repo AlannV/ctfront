@@ -27,7 +27,6 @@
     "redux-thunk": "^2.4.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://ctfront-production.up.railway.app/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
