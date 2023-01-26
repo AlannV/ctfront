@@ -1,4 +1,3 @@
-import { ContactSupportOutlined } from "@mui/icons-material";
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -33,15 +32,13 @@ export default function LoginCart({ state }) {
     try {
       await logIn(user.email, user.password);
       const credentials = window.localStorage.getItem("token");
-      const isAdmin = await axios.post(
+      await axios.post(
         "https://ctback-production.up.railway.app/users/isAdmin",
         {
           token: credentials,
         }
       );
       navigate("/cart");
-
-      //navigate("/adminmenu");
     } catch (error) {
       if (error.code === "auth/user-not-found") {
         setError("El correo es inexistente");
@@ -49,7 +46,6 @@ export default function LoginCart({ state }) {
       if (error.code === "auth/wrong-password") {
         setError("Contraseña inválida");
       }
-      // setError(error.message)
     }
   };
   const handleGoogleSignIn = async () => {

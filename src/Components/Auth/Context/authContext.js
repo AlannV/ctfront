@@ -12,7 +12,6 @@ import {
 
 import { auth } from "../Firebase/FirebaseAuth";
 import axios from "axios";
-import { Navigate } from "react-router-dom";
 
 export const authContext = createContext();
 
@@ -22,11 +21,7 @@ export const useAuth = () => {
 };
 
 export function AuthProvider({ children }) {
-  // const user = {
-  // login: true
-  // }
   const [authUser, setAuthUser] = useState(null);
-  // const [accessToken, setAccessToken]= useState("")
 
   const signUp = async (email, password, name) => {
     await createUserWithEmailAndPassword(auth, email, password).then(

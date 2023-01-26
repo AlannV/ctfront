@@ -20,7 +20,7 @@ function DeleteSchedule() {
   const allRooms = useSelector((state) => state.rooms);
   const allMovies = useSelector((state) => state.allMovies);
   const [currentPage, setCurrentPage] = useState(1);
-  const [schedulesPerPage, setSchedulesPerPage] = useState(10);
+  const [schedulesPerPage] = useState(10);
   const indexOfLastSchedule = currentPage * schedulesPerPage;
   const indexOfFirstSchedule = indexOfLastSchedule - schedulesPerPage;
   const currentSchedules = allSchedules?.slice(
@@ -32,14 +32,10 @@ function DeleteSchedule() {
     dispatch(getSchedules());
     dispatch(getRooms());
     dispatch(getAllMovies());
-  }, []);
+  }, [dispatch]);
 
   function paging(pageNumber) {
     setCurrentPage(pageNumber);
-  }
-
-  function handlePagesChange(e) {
-    setSchedulesPerPage(e.target.value);
   }
 
   function handleDelete(el) {
