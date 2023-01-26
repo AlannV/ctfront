@@ -52,17 +52,7 @@ function MovieDetails({
     return () => {
       delMovieDetail();
     };
-  }, [
-    dispatch,
-    delMovieDetail,
-    id,
-    getMovieDetail,
-    movieReviews.length,
-    getMovieReviews,
-    totalReviews,
-    reviewChange,
-    getAllUsers,
-  ]);
+  }, [dispatch]);
   const users = useSelector((state) => state.users);
   // FUNCION PARA POSTEAR UNA NUEVA REVIEW
   function handleSubmit(e) {
