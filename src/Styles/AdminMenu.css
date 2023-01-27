@@ -1,0 +1,329 @@
+@import "./index.css";
+
+.admin-menu-sub-container {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Oswald", "Roboto";
+  color: var(--white);
+  user-select: none;
+  background-color: transparent;
+  margin-bottom: -1rem;
+}
+
+.admin-menu-left-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.admin-menu-right-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.admin-menu-options-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.admin-menu-options {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+  transition: all 0.5s;
+}
+
+.admin-menu-options:hover {
+  color: rgb(115, 86, 208);
+  border-color: #9ecaed;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem #9ecaed;
+}
+
+.admin-menu-options-movies:hover {
+  background-image: url("https://i.giphy.com/media/eYwDrm9suCZzy/giphy.webp");
+  background-position: center;
+}
+
+.admin-menu-options-products:hover {
+  background-image: url("https://th.bing.com/th/id/R.107020bbad0645533d44b687e10827e5?rik=h3kKVii7099RGg&riu=http%3a%2f%2fheadsup.boyslife.org%2ffiles%2f2017%2f01%2fraw.gif&ehk=rkuYRpCb1XDWBro9ZUTRBxEAm1isiuG5TjnPsoZbeKQ%3d&risl=1&pid=ImgRaw&r=0");
+  background-position: center;
+}
+
+.admin-menu-options-users:hover {
+  background-image: url("https://i.giphy.com/media/vaRCdgM0fLNrW/giphy.webp");
+  background-position: center;
+  background-size: cover;
+  visibility: visible;
+}
+
+.admin-menu-options-schedules:hover {
+  background-image: url("https://th.bing.com/th/id/R.d6bb240b67c2d8486c10c2b61d119ede?rik=H%2fOe8s3pE4un6w&riu=http%3a%2f%2fwww.beautifullife.info%2fwp-content%2fuploads%2f2011%2f06%2f01%2fcinemagraphs-29.gif&ehk=VlWTaGmmgkJLQH6BftSupq1EVEfoif8Wzt5hmFMwP5E%3d&risl=&pid=ImgRaw&r=0");
+  background-position: center;
+}
+
+.admin-menu-options-rooms:hover {
+  background-image: url("https://th.bing.com/th/id/R.b164013530b5879576f8ff913e12a562?rik=Tq5St40ylDCUQw&riu=http%3a%2f%2fholatelcel.com%2fwp-content%2fuploads%2f2017%2f12%2fpeliculas-enero.gif&ehk=7YAsiJK8BkOiXeWgANR496RDAcQdB%2fyPLLQt11FHJsc%3d&risl=&pid=ImgRaw&r=0");
+  background-position: center;
+}
+
+.admin-form {
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-titles {
+  font-family: "Oswald", "Roboto";
+  font-size: 2rem;
+  text-indent: 0.5rem;
+  min-height: 2rem;
+}
+
+.admin-input {
+  font-family: "Oswald", "Roboto";
+  font-size: 1.5rem;
+  border-radius: 0.6rem;
+  text-indent: 0.5rem;
+  min-height: 2rem;
+}
+
+.admin-input:hover {
+  border-color: #9ecaed;
+  box-shadow: 0 0 1rem #9ecaed;
+}
+
+.admin-input:focus {
+  border-color: #9ecaed;
+  box-shadow: 0 0 2rem var(--white);
+}
+
+.admin-radio {
+  cursor: pointer;
+}
+
+.admin-radio:hover {
+  color: rgb(180, 169, 214);
+  box-shadow: 0 0 1rem #f9fbfc;
+}
+
+.admin-radio-text {
+  pointer-events: none;
+  margin-left: 1rem;
+}
+
+input[type="radio"]:after {
+  display: inline-block;
+  visibility: visible;
+  position: relative;
+
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  background-color: #d1d3d1;
+  content: "";
+  border: 2px solid white;
+}
+
+input[type="radio"]:checked:after {
+  display: inline-block;
+  visibility: visible;
+  position: relative;
+
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  background-color: #421092;
+  content: "";
+  border: 2px solid white;
+}
+
+input[type="file"] {
+  border-radius: 15px;
+}
+
+.admin-form-titles {
+  pointer-events: none;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  letter-spacing: 0.2rem;
+}
+
+.admin-textarea {
+  font-family: "Oswald", "Roboto";
+  font-size: 1.5rem;
+  border-radius: 0.6rem;
+  text-indent: 0.5rem;
+  min-height: 2rem;
+}
+
+.admin-textarea:hover {
+  border-color: #9ecaed;
+  box-shadow: 0 0 1rem #9ecaed;
+}
+
+.admin-textarea:focus {
+  border-color: #9ecaed;
+  box-shadow: 0 0 2rem var(--white);
+}
+
+.admin-radio-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.admin-select-selected {
+  display: flex;
+}
+
+.admin-selected-options {
+  pointer-events: all;
+  user-select: none;
+  list-style: none;
+  font-family: "Oswald", "Roboto";
+  font-size: 1.5rem;
+  border-radius: 0.6rem;
+  min-height: 2rem;
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  padding: 0.3rem;
+}
+
+.admin-selected-options:hover {
+  color: rgb(115, 86, 208);
+  border-color: #9ecaed;
+  box-shadow: 0 0 1rem #9ecaed;
+}
+
+.admin-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.another-container {
+  display: flex;
+}
+
+.admin-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Oswald", "Roboto";
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  min-width: 12rem;
+  max-width: 12rem;
+
+  max-height: 3rem;
+  min-height: 3rem;
+
+  color: var(--white);
+  background-color: var(--black);
+
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 2px solid var(--white);
+  border-radius: 5px;
+
+  transition: all 0.3s;
+}
+
+.admin-buttons:hover {
+  filter: brightness(150%);
+  border: 2px solid transparent;
+  color: var(--black);
+  background-color: var(--white);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.admin-search-buttons {
+  font-family: "Oswald", "Roboto";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 4rem;
+  min-height: 2.5rem;
+  color: var(--white);
+  background-color: var(--black);
+  padding: 0.5em;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 2px solid var(--white);
+  transition: all 0.3s;
+  margin: 0.5rem;
+}
+
+.admin-search-buttons:hover {
+  filter: brightness(150%);
+  border: 2px solid transparent;
+  color: var(--black);
+  background-color: var(--white);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-us-main-container {
+  font-family: "Roboto";
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-us-sub-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: var(--grey);
+  border-radius: 1rem;
+  box-shadow: inset 0 0 0.5rem #8309e7;
+}
+
+@media screen and (max-width: 450px) {
+  .contact-us-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-us-sub-container {
+    width: 100%;
+  }
+  .admin-input {
+    width: 90%;
+  }
+  .admin-textarea {
+    width: 90%;
+  }
+  .admin-buttons-container {
+    width: 90%;
+  }
+  .admin-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

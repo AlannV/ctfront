@@ -1,65 +1,62 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { AuthProvider } from "./Components/Auth/Context/authContext";
+import { AuthProvider } from "./Components/Auth/authContext";
 
-import Home from "./Components/Common/Home/Home";
+import Home from "./Components/Common/Home";
 
-import MovieDetails from "./Components/Movies/MovieDetails/MovieDetails";
-import AdminMenu from "./Components/Admin/AdminMenu/AdminMenu";
+import MovieDetails from "./Components/Movies/MovieDetails";
+
 import Login from "./Components/Auth/Login";
-import Register from "./Components/Auth/Register/Register";
+import Register from "./Components/Auth/Register";
 import Schedule from "./Components/Schedule/Schedule";
 import ScheduleByMovie from "./Components/Schedule/ScheduleByMovie";
 import Room from "./Components/Room/Room";
-import Cart from "./Components/BuyProcess/Cart/Cart";
+import Cart from "./Components/BuyProcess/Cart";
 
-import BanUser from "./Components/Admin/Users/BanUser/BanUser.js";
-import ActivateUser from "./Components/Admin/Users/ActivateUser/ActivateUser";
-import CreateUser from "./Components/Admin/Users/CreateUser/CreateUser.js";
-import ResetUserPassword from "./Components/Admin/Users/ResetUserPassword/ResetUserPassword.js";
-import UpgradeUser from "./Components/Admin/Users/UpgradeUser/UpgradeUser.js";
-import DeleteUser from "./Components/Admin/Users/DeleteUser/DeleteUser.js";
-import Purchases from "./Components/Admin/Users/Purchases/Purchases";
+import AdminMenu from "./Components/Admin/AdminMenu";
+import BanUser from "./Components/Admin/BanUser";
+import ActivateUser from "./Components/Admin/ActivateUser";
+import CreateUser from "./Components/Admin/CreateUser.js";
+import ResetUserPassword from "./Components/Admin/ResetUserPassword.js";
+import UpgradeUser from "./Components/Admin/UpgradeUser.js";
+import DeleteUser from "./Components/Admin/DeleteUser.js";
+import Purchases from "./Components/Admin/Purchases";
+import CreateMovie from "./Components/Admin/CreateMovie.js";
+import DeleteMovie from "./Components/Admin/DeleteMovie.js";
+import EditMovie from "./Components/Admin/EditMovie.js";
+import CreateProduct from "./Components/Admin/CreateProduct.js";
+import EditProduct from "./Components/Admin/EditProduct.js";
+import DeleteProduct from "./Components/Admin/DeleteProduct.js";
+import CreateSchedule from "./Components/Admin/CreateSchedule";
+import DeleteSchedule from "./Components/Admin/DeleteSchedule";
+import CreateRoom from "./Components/Admin/CreateRoom";
+import EditRoom from "./Components/Admin/EditRoom";
+import DeleteRoom from "./Components/Admin/DeleteRoom";
 
-import CreateMovie from "./Components/Admin/Movies/CreateMovie/CreateMovie.js";
-import DeleteMovie from "./Components/Admin/Movies/DeleteMovie/DeleteMovie.js";
-import EditMovie from "./Components/Admin/Movies/EditMovie/EditMovie.js";
+import Success from "./Components/BuyProcess/Success";
+import Pending from "./Components/BuyProcess/Pending";
+import Fail from "./Components/BuyProcess/Fail";
 
-import CreateProduct from "./Components/Admin/Products/CreateProduct/CreateProduct.js";
-import EditProduct from "./Components/Admin/Products/EditProduct/EditProduct.js";
-import DeleteProduct from "./Components/Admin/Products/DeleteProduct/DeleteProduct.js";
-
-import CreateSchedule from "./Components/Admin/Schedules/CreateSchedule/CreateSchedule";
-import DeleteSchedule from "./Components/Admin/Schedules/DeleteSchedule/DeleteSchedule";
-
-import CreateRoom from "./Components/Admin/Rooms/CreateRoom/CreateRoom";
-import EditRoom from "./Components/Admin/Rooms/EditRoom/EditRoom";
-import DeleteRoom from "./Components/Admin/Rooms/DeleteRoom/DeleteRoom";
-
-import Success from "./Components/BuyProcess/Succes/Success";
-import Pending from "./Components/BuyProcess/Pending/Pending";
-import Fail from "./Components/BuyProcess/Fail/Fail";
-
-import Products from "./Components/User/Products/Products";
-import ProtectedRoute from "./Components/Auth/ProtectedRoute/ProtectedRoute.js";
-import Error from "./Components/Common/Error/Error";
+import Products from "./Components/User/Products";
+import ProtectedRoute from "./Components/Auth/ProtectedRoute.js";
+import Error from "./Components/Common/Error";
 import Header from "./Components/Common/Header/Header";
 import Footer from "./Components/Common/Footer/Footer";
-import PasswordChange from "./Components/User/MyProfile/PasswordChange";
-import MyPurchases from "./Components/User/MyProfile/MyPurchases";
+import PasswordChange from "./Components/User/PasswordChange";
+import MyPurchases from "./Components/User/MyPurchases";
 
-import { AboutUs } from "./Components/Common/Footer/FooterComponents/AboutUs";
-import { ContactUs } from "./Components/Common/Footer/FooterComponents/ContactUs";
-import { Terms } from "./Components/Common/Footer/FooterComponents/Terms";
-import { MyProfile } from "./Components/User/MyProfile/MyProfile";
-import { MyFavMovies } from "./Components/User/MyProfile/MyFavMovies";
+import { AboutUs } from "./Components/Common/Footer/AboutUs";
+import { ContactUs } from "./Components/Common/Footer/ContactUs";
+import { Terms } from "./Components/Common/Footer/Terms";
+import { MyProfile } from "./Components/User/MyProfile";
+import { MyFavMovies } from "./Components/User/MyFavMovies";
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <Router basename="/cinema">
+        <Router basename="/">
           <Header />
           <Routes>
             <Route exact path="/" element={<Home />} />

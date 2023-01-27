@@ -9,6 +9,7 @@ const {
   REACT_APP_POST_RESET_USER_PASSWORD,
   REACT_APP_DELETE_USER,
   REACT_APP_POST_NEW_USER,
+  REACT_APP_PUT_CHANGE_PASSWORD,
 } = process.env;
 
 export function newUser(input) {
@@ -99,6 +100,17 @@ export function deleteUser(payload) {
       alert("User deleted");
     } catch (error) {
       alert("Error deleting user");
+      console.error(error);
+    }
+  };
+}
+
+//! Change password
+export function changePassword(update) {
+  return async function () {
+    try {
+      await axios.put(REACT_APP_PUT_CHANGE_PASSWORD, update);
+    } catch (error) {
       console.error(error);
     }
   };

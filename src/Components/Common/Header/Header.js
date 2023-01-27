@@ -5,13 +5,15 @@ import { Link, useNavigate } from "react-router-dom";
 import PersonIcon from "@mui/icons-material/Person";
 import logos from "../../../Images/Images";
 
-import { useAuth } from "../../Auth/Context/authContext";
+import { useAuth } from "../../Auth/authContext";
 
-import "./Header.css";
+import "../../../Styles/Header.css";
 
-import Sidebar from "./MenuDrop/Sidebar";
-import Toggle from "./MenuDrop/Menubtn/Menubtn";
+import Sidebar from "./Sidebar";
+import Toggle from "./Menubtn";
 import axios from "axios";
+
+const { REACT_APP_USER_ACTIVE_TOKEN } = process.env;
 
 const logoCinema = logos[0].image;
 function Header() {
@@ -43,9 +45,7 @@ function Header() {
     if (authUser !== null) return true;
     if (token) {
       const isActive = axios
-        .get(
-          `https://ctback-production.up.railway.app/users/isActive?token=${token}`
-        )
+        .get(`${REACT_APP_USER_ACTIVE_TOKEN}${token}`)
         .then((res) => {
           if (res.status === 200) {
             const loggedUser = {

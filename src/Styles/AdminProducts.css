@@ -1,0 +1,107 @@
+.edit-product-main-container {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Oswald", "Roboto";
+  color: var(--white);
+  user-select: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+}
+
+.edit-product-sub-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 75vh;
+}
+
+.edit-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.admin-products-container {
+  font-size: 1rem;
+  max-width: 60vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 3rem;
+}
+
+.admin-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 1rem;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  transition: all 0.3s;
+}
+
+.admin-product:hover {
+  background-color: black;
+  border-color: #9ecaed;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem #9ecaed;
+  transform: scale(1.1, 1.1);
+  transition: 0.3s;
+  animation: backAni 4s infinite alternate;
+}
+
+.admin-product-image {
+  border-radius: 1rem;
+  height: 200px;
+  width: 180px;
+}
+
+.admin-product-info {
+}
+
+@keyframes backAni {
+  0% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    background-color: rgba(101, 31, 192, 0.5);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.delete-product-button {
+  font-family: "Oswald", "Roboto";
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 6rem;
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 5px;
+  transition: all 0.5s;
+  margin: 0.5rem;
+}
+
+.delete-product-button:hover {
+  filter: brightness(150%);
+  border: 2px solid transparent;
+  color: var(--black);
+  background-color: var(--white);
+  cursor: pointer;
+  transition: 0.5s;
+}

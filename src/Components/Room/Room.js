@@ -1,5 +1,5 @@
 import React from "react";
-import "./Room.css";
+import "../../Styles/Room.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getScheduleById, delSchedule } from "../../Redux/Actions/schedules";

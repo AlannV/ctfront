@@ -1,0 +1,22 @@
+.create-schedule-main-container {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Oswald", "Roboto";
+  color: var(--white);
+  user-select: none;
+  background-color: transparent;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+.admin-schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  border: solid 1px white;
+  border-radius: 0.6rem;
+}

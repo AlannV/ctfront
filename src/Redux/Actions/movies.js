@@ -1,3 +1,5 @@
+import axios from "axios";
+
 import {
   GET_MOVIES,
   GET_MOVIE_DETAIL,
@@ -7,8 +9,10 @@ import {
   FILTER_MOVIES,
   COMING_SOON,
   GET_ALL_MOVIES,
+  RESET_SEARCH,
+  GET_REVIEWS,
 } from "../action-types";
-import axios from "axios";
+
 const {
   REACT_APP_POST_CREATE_MOVIE,
   REACT_APP_PUT_UPDATE_MOVIE,
@@ -16,6 +20,9 @@ const {
   REACT_APP_PUT_ACTIVATE_MOVIE,
   REACT_APP_GET_ALL_MOVIES,
   REACT_APP_GET_MOVIE_BY_NAME,
+  REACT_APP_GET_MOVIE_REVIEW_BY_ID,
+  REACT_APP_POST_CREATE_REVIEW,
+  REACT_APP_PUT_ADD_FAVORITE,
 } = process.env;
 
 export function getMovies() {
@@ -76,6 +83,12 @@ export function getComingSoon() {
   };
 }
 
+export function resetSearch() {
+  return {
+    type: RESET_SEARCH,
+  };
+}
+
 export function getAllMovies() {
   return async function (dispatch) {
     try {
@@ -130,3 +143,41 @@ export const activateMovie = (id) => async () => {
     console.error(error);
   }
 };
+
+// REVIEWS
+
+export function getMovieReviews(id_movie) {
+  return async function (dispatch) {
+    try {
+      let response = await axios.get(
+        `${REACT_APP_GET_MOVIE_REVIEW_BY_ID}${id_movie}`
+      );
+      return dispatch({ type: GET_REVIEWS, payload: response.data });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+}
+
+export function createReview(review) {
+  return async function () {
+    try {
+      await axios.post(REACT_APP_POST_CREATE_REVIEW, review);
+    } catch (error) {
+      alert("Error submiting the review, try it again later");
+      console.error(error);
+    }
+  };
+}
+
+//!Favoritos
+export function setFav(update, user_id) {
+  return async function () {
+    try {
+      await axios.put(`${REACT_APP_PUT_ADD_FAVORITE}${user_id}`, update);
+    } catch (error) {
+      alert("Error adding to favorites!");
+      console.error(error);
+    }
+  };
+}

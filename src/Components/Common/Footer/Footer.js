@@ -2,9 +2,9 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 
-import SocialMedia from "./FooterComponents/SocialMedia";
+import SocialMedia from "./SocialMedia";
 
-import "./Footer.css";
+import "../../../Styles/Footer.css";
 
 function Footer() {
   return (

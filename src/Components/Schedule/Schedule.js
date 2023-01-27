@@ -1,5 +1,5 @@
 import React from "react";
-import "./Schedule.css";
+import "../../Styles/Schedule.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllSchedule } from "./../../Redux/Actions/schedules";

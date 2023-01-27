@@ -1,0 +1,84 @@
+@import "./index.css";
+
+.schedule--container {
+  display: flex;
+  flex-direction: row;
+  margin: 6em auto;
+  width: 80vw;
+  border: 10px solid var(--grey);
+  border-radius: 5px;
+  position: relative;
+}
+
+.schedule--poster {
+  width: 50%;
+  box-shadow: 13px 0px 15px var(--black);
+  z-index: 1;
+}
+
+.schedule--cards--container {
+  width: 100%;
+  background-color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  font-family: "Oswald";
+  gap: 2em;
+}
+
+.schedule--card--container {
+  background-color: var(--black);
+  padding: 0.5em 2em;
+  transition: 0.3s;
+  display: flex;
+  justify-content: flex-start;
+  border: 2px solid var(--white);
+  border-left: 5px solid transparent;
+  border-right: 0;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+.schedule--card--container:hover {
+  background-color: var(--white);
+  color: var(--black);
+  transition: 0.3s;
+}
+.sold--out {
+  background-color: var(--red);
+  font-size: 1.25em;
+  position: absolute;
+  right: 0;
+  padding: 0.5em;
+}
+
+.schedule--data--container {
+  display: flex;
+  gap: 0.5em;
+}
+.schedule--data {
+  background-color: var(--grey);
+  color: var(--white);
+  padding: 0.5em;
+}
+
+.schedule--button--goback {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  right: 1em;
+}
+.schedule--container-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+@media screen and (max-width: 450px) {
+  .schedule--container {
+    flex-direction: column;
+  }
+  .movie--detail--button-2 {
+    position: relative;
+    top: -150px;
+  }
+}

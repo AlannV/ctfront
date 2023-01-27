@@ -1,10 +1,8 @@
 import { React } from "react";
 
-import "./SearchBar.css";
+import "../../Styles/SearchBar.css";
 
-
-export default function SearchBar({filters, setFilters}) {
-
+export default function SearchBar({ filters, setFilters }) {
   function handleInputChange(e) {
     e.preventDefault();
     setFilters({
@@ -18,9 +16,9 @@ export default function SearchBar({filters, setFilters}) {
         className="searchbar--input"
         type="text"
         placeholder="Search a movie"
-        name= 'title'
+        name="title"
         onChange={(e) => handleInputChange(e)}
-        value={filters.title === 'default' ? '' : filters.title}
+        value={filters.title === "default" ? "" : filters.title}
       ></input>
     </div>
   );

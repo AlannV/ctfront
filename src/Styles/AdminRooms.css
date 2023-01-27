@@ -1,0 +1,9 @@
+.create-room-main-container {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+  font-family: "Oswald", "Roboto";
+  color: var(--white);
+  user-select: none;
+  background-color: transparent;
+}

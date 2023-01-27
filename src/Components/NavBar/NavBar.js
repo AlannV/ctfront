@@ -3,7 +3,7 @@ import { useAuth } from "../Context/authContext";
 import { useNavigate } from "react-router-dom";
 
 import SearchBar from "../SearchBar/SearchBar.js";
-import "./NavBar.css";
+import "../../Styles/NavBar.css";
 
 function NavBar() {
   const { user, logOut } = useAuth();

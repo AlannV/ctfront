@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "./Context/authContext";
+import { useAuth } from "./authContext";
 
-import "./Login.css";
+import "../../Styles/Login.css";
+
+const { REACT_APP_IS_ADMIN } = process.env;
 
 export default function Login() {
   const [user, setUser] = useState({
@@ -34,12 +36,9 @@ export default function Login() {
     try {
       await logIn(user.email, user.password);
       const credentials = window.localStorage.getItem("token");
-      const isAdmin = await axios.post(
-        "https://ctback-production.up.railway.app/users/isAdmin",
-        {
-          token: credentials,
-        }
-      );
+      const isAdmin = await axios.post(REACT_APP_IS_ADMIN, {
+        token: credentials,
+      });
       isAdmin.data ? navigate("/adminMenu") : navigate("/");
 
       //navigate("/adminmenu");

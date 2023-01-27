@@ -1,5 +1,5 @@
 import React from "react";
-import "./Schedule.css";
+import "../../Styles/Schedule.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -8,7 +8,7 @@ import {
 } from "./../../Redux/Actions/schedules";
 import { Link, useParams } from "react-router-dom";
 import ScheduleCard from "./ScheduleCard";
-import Loading from "../Common/Loading/Loading";
+import Loading from "../Common/Loading";
 
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 
