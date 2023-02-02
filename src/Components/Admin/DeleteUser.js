@@ -5,7 +5,7 @@ import "../../Styles/AdminUsers.css";
 import allActions from "../../Redux/Actions";
 const { deleteUser } = allActions;
 
-function DeleteUser() {
+function DeleteUser({ setIsOpenDeleteUser }) {
   const dispatch = useDispatch();
 
   const [input, setInput] = useState({
@@ -57,9 +57,12 @@ function DeleteUser() {
             </div>
           </form>
         </div>
-        <Link to="/adminmenu">
-          <button className="admin-buttons">Go Back</button>
-        </Link>
+        <button
+          className="admin-buttons"
+          onClick={() => setIsOpenDeleteUser(false)}
+        >
+          Close
+        </button>
       </div>
     </div>
   );

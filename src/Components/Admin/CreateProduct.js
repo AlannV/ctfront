@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import "../../Styles/AdminProducts.css";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import allActions from "../../Redux/Actions";
 const { createProduct, startUploadingFiles } = allActions;
 
-function CreateProduct() {
+function CreateProduct({ setIsOpenCreateProduct }) {
   const dispatch = useDispatch();
 
   const [input, setInput] = useState({
@@ -59,9 +58,9 @@ function CreateProduct() {
               </label>
               <input
                 key="name"
-                className="admin-input"
                 name="name"
                 type="text"
+                className="admin-input"
                 placeholder="Name"
                 value={input.value}
                 onChange={(e) => handleChange(e)}
@@ -89,22 +88,22 @@ function CreateProduct() {
                 key="stock"
                 name="stock"
                 type="text"
-                placeholder="Stock"
                 className="admin-input"
+                placeholder="Stock"
                 value={input.value}
                 onChange={(e) => handleChange(e)}
               />
             </>
             <>
               <label htmlFor="image" className="admin-form-titles">
-                Image:{" "}
+                Image:
               </label>
               <input
                 key="image"
                 name="image"
+                type="file"
                 className="admin-input"
                 placeholder="Image"
-                type="file"
                 value={input.image}
                 onChange={onFileInputChange}
               />
@@ -119,9 +118,12 @@ function CreateProduct() {
             </div>
           </form>
         </div>
-        <Link to="/adminmenu">
-          <button className="admin-buttons">Go Back</button>
-        </Link>
+        <button
+          className="admin-buttons"
+          onClick={() => setIsOpenCreateProduct(false)}
+        >
+          Close
+        </button>
       </div>
     </div>
   );

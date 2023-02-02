@@ -8,7 +8,7 @@ import { emailValidator } from "../helpers/EmailValidator";
 import allActions from "../../Redux/Actions";
 const { createUser, newUser } = allActions;
 
-function CreateUser() {
+function CreateUser({ setIsOpenCreateUser }) {
   const dispatch = useDispatch();
 
   const [input, setInput] = useState({
@@ -153,9 +153,13 @@ function CreateUser() {
             </div>
           </form>
         </div>
-        <Link to="/adminmenu">
-          <button className="admin-buttons">Go Back</button>
-        </Link>
+
+        <button
+          className="admin-buttons"
+          onClick={() => setIsOpenCreateUser(false)}
+        >
+          Close
+        </button>
       </div>
     </div>
   );

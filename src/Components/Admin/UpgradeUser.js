@@ -6,7 +6,7 @@ import "../../Styles/AdminUsers.css";
 import allActions from "../../Redux/Actions";
 const { modifyRole } = allActions;
 
-function UpgradeUser() {
+function UpgradeUser({ setIsOpenChangeRole }) {
   const dispatch = useDispatch();
 
   const [input, setInput] = useState({
@@ -105,9 +105,12 @@ function UpgradeUser() {
             </div>
           </form>
         </div>
-        <Link to="/adminmenu">
-          <button className="admin-buttons">Go Back</button>
-        </Link>
+        <button
+          className="admin-buttons"
+          onClick={() => setIsOpenChangeRole(false)}
+        >
+          Close
+        </button>
       </div>
     </div>
   );

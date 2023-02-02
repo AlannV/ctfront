@@ -5,7 +5,7 @@ import "../../Styles/AdminUsers.css";
 import allActions from "../../Redux/Actions";
 const { banUser } = allActions;
 
-function BanUser() {
+function BanUser({ setIsOpenDeactivateUser }) {
   const dispatch = useDispatch();
   const [input, setInput] = useState({
     email: "",
@@ -58,9 +58,12 @@ function BanUser() {
           </div>
         </div>
 
-        <Link to="/adminmenu">
-          <button className="admin-buttons">Go Back</button>
-        </Link>
+        <button
+          className="admin-buttons"
+          onClick={() => setIsOpenDeactivateUser(false)}
+        >
+          Close
+        </button>
       </div>
     </div>
   );

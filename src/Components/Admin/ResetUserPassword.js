@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../../Styles/ResetUserPassword.css";
 import { useAuth } from "../Auth/authContext";
 
-function ResetUserPassword() {
+function ResetUserPassword({ setIsOpenResetPassword }) {
   const resetPassword = useAuth();
 
   const [input, setInput] = useState({
@@ -54,9 +54,12 @@ function ResetUserPassword() {
             </button>
           </div>
         </form>
-        <Link to="/adminmenu">
-          <button className="admin-buttons">Go Back</button>
-        </Link>
+        <button
+          className="admin-buttons"
+          onClick={() => setIsOpenResetPassword(false)}
+        >
+          Close
+        </button>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ import "../../Styles/AdminRooms.css";
 import allActions from "../../Redux/Actions";
 const { getSeats, getDisplays, createRoom } = allActions;
 
-function CreateRoom() {
+function CreateRoom({ setIsOpenCreateRoom }) {
   const dispatch = useDispatch();
 
   const [input, setInput] = useState({
@@ -138,9 +138,12 @@ function CreateRoom() {
               </div>
             </div>
           </form>
-          <Link to="/adminmenu">
-            <button className="admin-buttons">Go Back</button>
-          </Link>
+          <button
+            className="admin-buttons"
+            onClick={() => setIsOpenCreateRoom(false)}
+          >
+            Close
+          </button>
         </div>
       )}
     </div>

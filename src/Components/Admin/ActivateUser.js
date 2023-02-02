@@ -5,7 +5,7 @@ import "../../Styles/AdminUsers.css";
 import allActions from "../../Redux/Actions/index.js";
 const { unBanUser } = allActions;
 
-function ActivateUser() {
+function ActivateUser({ setIsOpenActivateUser }) {
   const dispatch = useDispatch();
   const [input, setInput] = useState({
     email: "",
@@ -55,9 +55,12 @@ function ActivateUser() {
             </div>
           </form>
         </div>
-        <Link to="/adminmenu">
-          <button className="admin-buttons">Go Back</button>
-        </Link>
+        <button
+          className="admin-buttons"
+          onClick={() => setIsOpenActivateUser(false)}
+        >
+          Close
+        </button>
       </div>
     </div>
   );

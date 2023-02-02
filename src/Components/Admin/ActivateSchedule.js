@@ -10,6 +10,9 @@ import {
 import Paging from "../Common/Paging/Paging";
 
 import Loading from "../Common/Loading";
+
+import "../../Styles/Schedule.css";
+
 function ActivateSchedule() {
   const dispatch = useDispatch();
 

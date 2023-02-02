@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
 import { useDispatch, useSelector } from "react-redux";
-
 import "../../Styles/AdminSchedules.css";
 import allActions from "../../Redux/Actions";
 const { getRooms, getAllMovies, createSchedule } = allActions;
 
-function CreateSchedule() {
+function CreateSchedule({ setIsOpenCreateSchedule }) {
   const dispatch = useDispatch();
 
   const rooms = useSelector((state) => state.rooms);
@@ -179,9 +176,12 @@ function CreateSchedule() {
         </div>
       </div>
 
-      <Link to="/adminmenu">
-        <button className="admin-buttons">Go Back</button>
-      </Link>
+      <button
+        className="admin-buttons"
+        onClick={() => setIsOpenCreateSchedule(false)}
+      >
+        Close
+      </button>
     </div>
   );
 }

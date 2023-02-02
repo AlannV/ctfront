@@ -15,22 +15,13 @@ import Room from "./Components/Room/Room";
 import Cart from "./Components/BuyProcess/Cart";
 
 import AdminMenu from "./Components/Admin/AdminMenu";
-import BanUser from "./Components/Admin/BanUser";
-import ActivateUser from "./Components/Admin/ActivateUser";
-import CreateUser from "./Components/Admin/CreateUser.js";
-import ResetUserPassword from "./Components/Admin/ResetUserPassword.js";
-import UpgradeUser from "./Components/Admin/UpgradeUser.js";
-import DeleteUser from "./Components/Admin/DeleteUser.js";
 import Purchases from "./Components/Admin/Purchases";
 import CreateMovie from "./Components/Admin/CreateMovie.js";
 import DeleteMovie from "./Components/Admin/DeleteMovie.js";
 import EditMovie from "./Components/Admin/EditMovie.js";
-import CreateProduct from "./Components/Admin/CreateProduct.js";
 import EditProduct from "./Components/Admin/EditProduct.js";
 import DeleteProduct from "./Components/Admin/DeleteProduct.js";
-import CreateSchedule from "./Components/Admin/CreateSchedule";
 import DeleteSchedule from "./Components/Admin/DeleteSchedule";
-import CreateRoom from "./Components/Admin/CreateRoom";
 import EditRoom from "./Components/Admin/EditRoom";
 import DeleteRoom from "./Components/Admin/DeleteRoom";
 
@@ -92,61 +83,6 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            <Route
-              exact
-              path="/adminmenu/createuser"
-              element={
-                <ProtectedRoute>
-                  <CreateUser />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              exact
-              path="/adminmenu/upgradedemoteusers"
-              element={
-                <ProtectedRoute>
-                  <UpgradeUser />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              exact
-              path="/adminmenu/resetuserpassword"
-              element={
-                <ProtectedRoute>
-                  <ResetUserPassword />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              exact
-              path="/adminmenu/banuser"
-              element={
-                <ProtectedRoute>
-                  <BanUser />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              exact
-              path="/adminmenu/deleteuser"
-              element={
-                <ProtectedRoute>
-                  <DeleteUser />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              exact
-              path="/adminmenu/activateuser"
-              element={
-                <ProtectedRoute>
-                  <ActivateUser />
-                </ProtectedRoute>
-              }
-            />
 
             {/* Admin Movie Paths*/}
             <Route
@@ -179,15 +115,6 @@ function App() {
 
             <Route
               exact
-              path="/adminmenu/createproduct"
-              element={
-                <ProtectedRoute>
-                  <CreateProduct />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              exact
               path="/adminmenu/editproduct"
               element={
                 <ProtectedRoute>
@@ -207,30 +134,10 @@ function App() {
 
             <Route
               exact
-              path="/adminmenu/createschedule"
-              element={
-                <ProtectedRoute>
-                  <CreateSchedule />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              exact
               path="/adminmenu/deleteschedule"
               element={
                 <ProtectedRoute>
                   <DeleteSchedule />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              exact
-              path="/adminmenu/createroom"
-              element={
-                <ProtectedRoute>
-                  <CreateRoom />
                 </ProtectedRoute>
               }
             />
