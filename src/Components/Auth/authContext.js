@@ -35,8 +35,8 @@ export function AuthProvider({ children }) {
             const newUser = {
               email: email,
               token: idToken,
-              username: name,
-              role: "B",
+              name: name,
+              role: "A",
             };
             axios
               .post(REACT_APP_CREATE_USER_BY_USER, newUser)

@@ -13,6 +13,7 @@ const {
 } = process.env;
 
 export function newUser(input) {
+  console.log(input);
   return async function () {
     try {
       await axios.post(REACT_APP_POST_NEW_USER, input);

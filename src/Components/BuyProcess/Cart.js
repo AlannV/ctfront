@@ -150,6 +150,7 @@ function Cart() {
 
   async function startPaymentProcess() {
     setToggle(true);
+    console.log(sendPayment);
     const paymentBasic = await axios.post(REACT_APP_POST_PAYMENT, sendPayment);
     if (paymentBasic.status === 400) {
       window.alert(

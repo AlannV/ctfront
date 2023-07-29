@@ -77,83 +77,80 @@ export default function Login() {
 
   return (
     <div className="login--container">
-      {emailPassword ? (
-        <div className="Reset--Contaner">
-          <input
-            id="Login-email"
-            className="login--input"
-            name="email"
-            type="email"
-            placeholder="Email"
-            onChange={(e) => handleChange(e)}
-          />
+      <div className="Reset--Contaner">
+        <input
+          id="Login-email"
+          className="login--input"
+          name="email"
+          type="email"
+          placeholder="Email"
+          onChange={(e) => handleChange(e)}
+        />
+        <div className="login--buttons-container">
+          <button
+            className="login--button"
+            onClick={(e) => handleSendResetPassword(e)}
+          >
+            SEND EMAIL
+          </button>
+          <button className="login--button" onClick={handleResetPassword}>
+            CANCEL
+          </button>
+        </div>
+      </div>
+      <div>
+        <h1 className="login--title">LOGIN</h1>
+        <form className="login--form" onSubmit={(e) => handleSubmit(e)}>
+          <div className="login--container--email">
+            <label name="Email">EMAIL</label>
+            <input
+              id="Login-email"
+              className="login--input"
+              name="email"
+              type="email"
+              placeholder="Email"
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+
+          <div className="login--container--password">
+            <label name="Password">PASSWORD</label>
+            <input
+              id="Login-password"
+              className="login--input"
+              name="password"
+              type="password"
+              placeholder="Password"
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+
           <div className="login--buttons-container">
+            <button className="login--button" type="submit">
+              LOGIN
+            </button>
             <button
               className="login--button"
-              onClick={(e) => handleSendResetPassword(e)}
+              onClick={(e) => handleGoogleSignIn(e)}
             >
-              SEND EMAIL
-            </button>
-            <button className="login--button" onClick={handleResetPassword}>
-              CANCEL
+              LOGIN WITH GOOGLE
             </button>
           </div>
-        </div>
-      ) : (
-        <div>
-          <h1 className="login--title">LOGIN</h1>
-          <form className="login--form" onSubmit={(e) => handleSubmit(e)}>
-            <div className="login--container--email">
-              <label name="Email">EMAIL</label>
-              <input
-                id="Login-email"
-                className="login--input"
-                name="email"
-                type="email"
-                placeholder="Email"
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
 
-            <div className="login--container--password">
-              <label name="Password">PASSWORD</label>
-              <input
-                id="Login-password"
-                className="login--input"
-                name="password"
-                type="password"
-                placeholder="Password"
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-
-            <div className="login--buttons-container">
-              <button className="login--button" type="submit">
-                LOGIN
-              </button>
-              <button
-                className="login--button"
-                onClick={(e) => handleGoogleSignIn(e)}
-              >
-                LOGIN WITH GOOGLE
-              </button>
-            </div>
-
-            <div className="login--user--buttons">
-              <Link className="login--user--button" to="/register">
-                SIGN UP
-              </Link>
-              <button
-                className="login--user--button"
-                onClick={handleResetPassword}
-              >
-                FORGOT YOUR PASSWORD
-              </button>
-            </div>
-          </form>
-          {error && <p className="errorLogin">{error}</p>}
-        </div>
-      )}
+          <div className="login--user--buttons">
+            <Link className="login--user--button" to="/register">
+              SIGN UP
+            </Link>
+            <button
+              className="login--user--button"
+              onClick={handleResetPassword}
+            >
+              FORGOT YOUR PASSWORD
+            </button>
+          </div>
+        </form>
+        {error && <p className="errorLogin">{error}</p>}
+      </div>
     </div>
   );
 }

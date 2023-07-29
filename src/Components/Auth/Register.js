@@ -21,9 +21,6 @@ export default function Register() {
   const { signUp } = useAuth();
   const dispatch = useDispatch();
 
-  const handleHome = () => {
-    navigate("/");
-  };
   const handleChange = (e) => {
     setUser({
       ...user,
@@ -35,7 +32,8 @@ export default function Register() {
     setError("");
     try {
       if (passwordValidator(user.password, user.confirmPassword)) {
-        await signUp(user.email, user.password, user.name);
+        let register = await signUp(user.email, user.password, user.name);
+        console.log(register);
         dispatch(newUser({ name: user.name, email: user.email }));
         //ToDo: Validar credencials y admin en esta instancia
         navigate("/");
